@@ -1,0 +1,11 @@
+/* Example: Hover effect on the chart container (if you add one) */
+.chart-container:hover {
+  /* You'd need to wrap the <Line> component in a <div className="chart-container"> */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Example: Subtle shadow on hover */
+}
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  margin-top: 20px;
+}

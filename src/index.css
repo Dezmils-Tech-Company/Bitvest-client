@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+:root{
+  --primary:#010133;
+  --secondary:#2ae205;
+  --accent:#fafafa;
+  --luxury:#6a00f4;
+  
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #010133;
+
+  /*  Fading Logo with a gradient: */
+  background-image:
+    linear-gradient(to right,
+      rgba(1, 1, 51, 0) 0%,         /* Fade out at the left edge */
+      url("logo.svg") 10%,            /* Logo visible at 10% */
+      url("logo.svg") 90%,            /* Logo visible until 90% */
+      rgba(1, 1, 51, 0) 100%);        /* Fade out at the right edge */
+
+  background-repeat: repeat-x;  /* Repeat the fading strip horizontally */
+  background-size: 500px 500px; /* Maintain the logo's size */
+  background-attachment: fixed; /* Keep the pattern fixed during scrolling */
+  background-position: top center;  /* Center the pattern horizontally */
+
+  color: var(--accent);
+}
+
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,158 @@
+.app-container {
+  margin: 0;
+  position: relative;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.headbar header {
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    box-shadow: 0 5px 7px rgba(27, 27, 27, 0.541);
+}
+.heads{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.headleft,.headright{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    button{
+        background: none;
+        border: none;
+        color: var(--primary);
+        size: 24px;
+        margin:0 10px 0 01  ;
+        cursor: pointer; 
+        font-size: 20px;
+    }
+}
+.headcenter{
+    display: flex; 
+    img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: auto;
+        box-shadow: inset;
+    }
+}
+
+.headbar P{
+    font-weight: 900;
+    font-size: 1.6rem;
+    margin: 0px 0 0 0;
+}
+
+.profavatar{
+    width: 40px;
+    height: 40px;
+    border-radius:50% ;
+    background:var(--primary);
+    overflow:hidden;
+    border:1px solid var(--accent);
+    align-Content:center;
+    object-fit: cover;
+    cursor: pointer;
+}
+.profileDrop{
+ position: absolute;
+ background: var(--background);
+ padding: 10px 0 0 10px;
+ z-index: 1000;
+ color: var(--primary);
+ width: 10%;
+ right: 30px;
+ top: 70px;
+ border-radius: 5px;
+ cursor: pointer;
+ box-shadow: 5px 7px 7px rgba(27, 27, 27, 0.541);
+ li{
+ display: flex;
+ gap: 10px;
+ cursor: pointer;
+ }
+}
+.dropIcon{
+    position: absolute;
+    top: 38px;
+    right: 48px;
+}
+
+
+/* Content area: main content + overview */
+.content-area {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+  overflow-y: auto;
+ 
+}
+
+/* Page content */
+.page-content {
+  flex: 3;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  margin:50px 0 0 200px  ;
+}
+
+/* Main area */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.menu {
+    display: none;
+}
+.search-icon{
+  display: none;
+}
+@media (max-width: 768px) {
+  .home{
+    display: none;
+  }
+.menu {
+    display: block;
+}
+.search-icon{
+  display: block;
+}
+.page-content {
+  flex: 3;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  margin:50px 0   ;
+}
+.content-area {
+  flex: 2;
+  padding: 0;
+ 
+}
+}
