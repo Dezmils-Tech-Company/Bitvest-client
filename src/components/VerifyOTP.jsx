@@ -37,21 +37,71 @@ const VerifyOTP = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Verify OTP</h2>
-            <p>An OTP has been sent to {email}.  Please enter it below.</p>
-            <div>
-                <label htmlFor="otp">OTP:</label>
-                <input
-                    type="text"
-                    id="otp"
-                    name="otp"
-                    value={otp}
-                    onChange={(e) => setOtp(e.target.value)}
-                />
-            </div>
-            <button type="submit">Verify OTP</button>
-        </form>
+        <div style={{
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            <form
+                onSubmit={handleSubmit}
+                style={{
+                    padding: '2rem 2.5rem',
+                    borderRadius: '12px',
+                    boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+                    minWidth: '320px',
+                    maxWidth: '90vw',
+                    background: '#fafafa'
+                }}
+            >
+                <h2 style={{ marginBottom: '1rem', color: '#010133', textAlign: 'center' }}>Verify OTP</h2>
+                <p style={{ marginBottom: '1.5rem', color: '#010133', fontSize: '1rem', textAlign: 'center' }}>
+                    An OTP has been sent to <span style={{ fontWeight: 600 }}>{email}</span>. Please enter it below.
+                </p>
+                <div style={{ marginBottom: '1.5rem' }}>
+                    <label htmlFor="otp" style={{ display: 'block', marginBottom: '0.5rem', color: '#333', fontWeight: 500 }}>
+                        OTP:
+                    </label>
+                    <input
+                        type="text"
+                        id="otp"
+                        name="otp"
+                        value={otp}
+                        onChange={(e) => setOtp(e.target.value)}
+                        style={{
+                            width: '90%',
+                            padding: '0.75rem',
+                            border: '1px solid #2ae205',
+                            borderRadius: '6px',
+                            fontSize: '1rem',
+                            outline: 'none',
+                            transition: 'border 0.2s',
+                        }}
+                        autoComplete="one-time-code"
+                        inputMode="numeric"
+                        maxLength={6}
+                        required
+                    />
+                </div>
+                <button
+                    type="submit"
+                    style={{
+                        width: '100%',
+                        padding: '0.75rem',
+                        background: '#2ae205',
+                        color: '#fafafa',
+                        border: 'none',
+                        borderRadius: '6px',
+                        fontSize: '1rem',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        transition: 'background 0.2s'
+                    }}
+                >
+                    Verify OTP
+                </button>
+            </form>
+        </div>
     );
 };
 

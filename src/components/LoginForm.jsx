@@ -1,6 +1,7 @@
 // src/components/LoginForm.js
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'; 
+import Loader from './loader';
 import { FaUser, FaLock } from 'react-icons/fa'; // Import icons for username and password
 import bitvestor from '../assets/bitvestor.png'; // Adjust the path as necessary
 import '../styling/LoginForm.css'; // Import your CSS for styling
@@ -13,7 +14,7 @@ const LoginForm = () => {
     const navigate = useNavigate();
 
     if (isLoading) {
-        return <div className="loading">Loading...</div>;
+        return <Loader/>;
     }
 
     const handleSubmit = async (e) => {
@@ -36,10 +37,10 @@ const LoginForm = () => {
 
             const responseData = await response.json();
 
-            // Assuming the backend sends back a token
+            // The backend sends back a token
             const token = responseData.token;
 
-            // Store the token (e.g., in localStorage, cookies, or Redux)
+            // Store the token 
             localStorage.setItem('token', token); 
             
             // Redirect to a protected area (e.g., dashboard)

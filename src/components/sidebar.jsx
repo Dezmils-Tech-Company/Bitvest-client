@@ -21,7 +21,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
       <NavLink to="/Products" className={({ isActive }) => isActive ? 'active' : ''}>
         <FaProductHunt /> Products
       </NavLink>
-      <NavLink to="/ Wallet" className={({ isActive }) => isActive ? 'active' : ''}>
+      <NavLink to="/Wallet" className={({ isActive }) => isActive ? 'active' : ''}>
         <FaMoneyBill /> Wallet
       </NavLink>
       <NavLink to="/withdraw" className={({ isActive }) => isActive ? 'active' : ''}>

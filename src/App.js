@@ -10,7 +10,10 @@ import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import ReferralHub from './components/ReferralHub';
 import VerifyOTP from './components/VerifyOTP';
+import Withdraw from './pages/withdraw.jsx';
+import Wallet from './pages/wallet.jsx';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+
 import { ModalProvider, useModal} from './contexts/ModalContext'; // Import ModalProvider and useModal
 import Modal from './components/Modal'; // Import the Modal component
 
@@ -95,6 +98,8 @@ function App() {
                         <Route path="/updates" element={<Updates />} />
                         <Route path="/products" element={<Products />} />
                         <Route path="/Refferal" element={<ReferralHub />} />
+                        <Route path="/wallet" element={<Wallet />} />
+                         <Route path="/withdraw" element={<Withdraw />} />
                       <Route path="/login" element={<LoginForm onLogin={handleLogin} />} />
                     </Routes>
                       </div>
