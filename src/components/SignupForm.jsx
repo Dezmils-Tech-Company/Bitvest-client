@@ -1,19 +1,36 @@
  // SignupForm.jsx
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../styling/SignupForm.css'; // Import your CSS for styling
 
 export default function SignupForm() {
   const [form, setForm] = useState({
-    fullName: '', username: '', email: '',
-    phone: '', country: '', dob: ''
+    fullName: '',
+    username: '',
+    email: '',
+    phone: '',
+    country: '',
+    dob: '',
+    referredBy: '',
+    password: '',
+    firstName: '',
+    lastName: ''
   }); // 
   const navigate = useNavigate();
+
+  // Extract referral code from URL on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const refCode = params.get('ref');
+    if (refCode) {
+      setForm(prev => ({ ...prev, referredBy: refCode }));
+    }
+  }, []);
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
+ 
   const handleSubmit = async e => {
     e.preventDefault();
     try {
@@ -37,7 +54,7 @@ export default function SignupForm() {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <p className="title">Create account</p>
-      <p className="message">Signup into Bit~Vest now and enjoy the premium Luxury of investment.</p>
+      <p className="message">Signup into Bit~Vestor now and enjoy the premium Luxury of investment.</p>
 
       <div className="flex">
         <label htmlFor="">
@@ -83,7 +100,11 @@ export default function SignupForm() {
       <span>Date of Birth</span>
       </label>
 
-     
+      <label>
+      <input className='input' name="referredBy" type="text" 
+      value={form.referredBy} placeholder="" onChange={handleChange} />
+      <span>referral Code</span>
+      </label>
 
       <button className="submit" type="submit">Register</button>
       <p class="signin">Already have an account ? <Link to="/login">Log in</Link></p>

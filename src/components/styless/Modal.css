@@ -4,13 +4,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.521);
+  background: rgba(0, 0, 0, 0.521);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
-
+.modal-overlay.no-overlay {
+   box-shadow: none;
+  padding: 0;
+  background: var(--primary); /* no overlay for login */
+  
+}
 .modal-content {
   background-color: var(--secondary);
   padding: 1rem;
@@ -20,6 +25,11 @@
   max-width: 600px;
   text-align: center;
   position: relative;
+}
+.modal-content.noBg {
+  background: none;
+  box-shadow: none;
+  padding: 0;
 }
 
 .close-button {

@@ -1,11 +1,12 @@
 import React from 'react';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useModal } from '../contexts/ModalContext';
+import LoginForm from '../components/LoginForm';
 
 const Logout = ({ children }) => {
-  const navigate = useNavigate();
-
+const { openModal } = useModal();
   const handleLogout = () => {
+  
     Swal.fire({
       title: 'You Are About to Leave Bit~vestor',
       text: 'You will be logged out.',
@@ -16,7 +17,7 @@ const Logout = ({ children }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem('token');
-        navigate('/login');
+          openModal(<LoginForm />,{ noOverlay: true, noBg: true });
         Swal.fire('Logged Out!', 'You have been successfully logged out.', 'success');
       }
     });

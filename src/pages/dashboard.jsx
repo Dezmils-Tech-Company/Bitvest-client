@@ -86,27 +86,27 @@ export default function Dashboard() {
         <div className="stat-card">
           <FaMoneyBillWave className="icon" />
           <div className="stat-title">Wallet Balance</div>
-          <div className="stat-value">$ 8.0</div>
+          <div className="stat-value">${profile.walletBalance || 0}</div>
         </div>
         <div className="stat-card">
           <FaAmazonPay className="icon" />
           <div className="stat-title">Total Cashout</div>
-          <div className="stat-value">$ 15.3</div>
+          <div className="stat-value">${profile.totalCashout || 0}</div>
         </div>
         <div className="stat-card">
           <FaBitcoin className="icon" />
           <div className="stat-title">Daily Income</div>
-          <div className="stat-value">$ 1.5</div>
+          <div className="stat-value">${profile.dailyIncome || 0}</div>
         </div>
         <div className="stat-card">
           <FaUserPlus className="icon" />
           <div className="stat-title">Total Referrals</div>
-          <div className="stat-value">3</div>
+          <div className="stat-value">{profile.referrals || 0}</div>
         </div>
         <div className="stat-card">
           <FaDollarSign className="icon" />
-          <div className="stat-title">Investiment Profit</div>
-          <div className="stat-value">95%</div>
+          <div className="stat-title">Investment Profit</div>
+          <div className="stat-value">15%</div>
         </div>
         
       </div>

@@ -3,7 +3,7 @@ import { useModal } from '../contexts/ModalContext';
 import './styless/Modal.css'; // Import the CSS file
 
 const Modal = () => {
-  const { isModalOpen, closeModal, modalContent } = useModal();
+  const { isModalOpen, closeModal, modalContent, modalOptions } = useModal();
 
   useEffect(() => {
     // Prevent scrolling when the modal is open
@@ -24,8 +24,8 @@ const Modal = () => {
   }
 
   return (
-    <div className="modal-overlay" onClick={closeModal}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className={`modal-overlay ${modalOptions.noOverlay ? 'no-overlay' : ''}`} onClick={closeModal}>
+      <div className={`modal-content ${modalOptions.plain ? 'no-bg' : ''}`} onClick={(e) => e.stopPropagation()}>
         {modalContent}
         <button className="close-button" onClick={closeModal}>
           X

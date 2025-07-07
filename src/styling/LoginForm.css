@@ -19,6 +19,12 @@
   font-size: 28px;
   font-weight: 800;
   color: var(--primary);
+  img{
+    position: relative;
+    width: 30px;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .login-form {

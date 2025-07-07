@@ -7,11 +7,14 @@ export const useModal = () => useContext(ModalContext);
 
 export const ModalProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalOptions, setModalOptions] = useState({});
   const [modalContent, setModalContent] = useState(null); // Store modal content (JSX)
 
-  const openModal = (content) => {
+  const openModal = (content, options = {}) => {
     setModalContent(content);
     setIsModalOpen(true);
+    setModalOptions(options);
+
   };
 
   const closeModal = () => {
@@ -20,7 +23,7 @@ export const ModalProvider = ({ children }) => {
   };
 
   return (
-    <ModalContext.Provider value={{ isModalOpen, openModal, closeModal, modalContent }}>
+    <ModalContext.Provider value={{ isModalOpen, openModal, closeModal, modalContent, modalOptions }}>
       {children}
     </ModalContext.Provider>
   );
