@@ -15,27 +15,27 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
         &times; {/* Close Icon */}
       </button>
       <br /> <br />
-      <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'active' : ''} end>
+      <NavLink to="/dashboard" onClick={toggleSidebar} className={({ isActive }) => isActive ? 'active' : ''} end>
         <FaHome /> Dashboard
       </NavLink>
-      <NavLink to="/Products" className={({ isActive }) => isActive ? 'active' : ''}>
+      <NavLink to="/Products" onClick={toggleSidebar} className={({ isActive }) => isActive ? 'active' : ''}>
         <FaProductHunt /> Products
       </NavLink>
-      <NavLink to="/Wallet" className={({ isActive }) => isActive ? 'active' : ''}>
+      <NavLink to="/Wallet" onClick={toggleSidebar} className={({ isActive }) => isActive ? 'active' : ''}>
         <FaMoneyBill /> Wallet
       </NavLink>
-      <NavLink to="/withdraw" className={({ isActive }) => isActive ? 'active' : ''}>
+      <NavLink to="/withdraw" onClick={toggleSidebar} className={({ isActive }) => isActive ? 'active' : ''}>
         <RiBankCardLine /> Withdraw
       </NavLink>
-      <NavLink to="/Refferal" className={({ isActive }) => isActive ? 'active' : ''}>
+      <NavLink to="/Refferal" onClick={toggleSidebar} className={({ isActive }) => isActive ? 'active' : ''}>
         <FaShareSquare /> Refferal Hub
       </NavLink>
-      <NavLink to="/updates" className={({ isActive }) => isActive ? 'active' : ''}>
+      <NavLink to="/updates" onClick={toggleSidebar} className={({ isActive }) => isActive ? 'active' : ''}>
         <MdTipsAndUpdates /> Updates
       </NavLink>
 
       <div className="sidebar-footer">
-        <NavLink to="/PROFILE" className={({ isActive }) => isActive ? 'active' : ''}>
+        <NavLink to="/PROFILE"  className={({ isActive }) => isActive ? 'active' : ''}>
           <FaUser/> PROFILE
         </NavLink>
 
