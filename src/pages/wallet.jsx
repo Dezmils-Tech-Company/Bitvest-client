@@ -7,7 +7,7 @@ const Wallet = () => {
   useEffect(() => {
     const fetchWallet = async () => {
       const token = localStorage.getItem('token'); // get JWT from storage
-      const res = await fetch('http://localhost:5000/api/wallet', {
+      const res = await fetch('https://bitvest-server-dmlk.onrender.com/api/wallet', {
        method: 'GET',
         headers: {
           'Authorization':`Bearer ${token}`
@@ -32,6 +32,8 @@ const Wallet = () => {
       <h2> Wallet Balance: ${balance}</h2>
       <hr/>
       <p> <em> Minimum Withdrwable amount - $3.95 </em> </p>
+     
+      <h2>Transactions Summary</h2>
       <ul>
   {transactions.map(transaction => (
     <li key={transaction._id}>

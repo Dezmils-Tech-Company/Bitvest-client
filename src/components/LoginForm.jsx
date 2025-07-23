@@ -22,7 +22,7 @@ const LoginForm = () => {
         setError(''); // Clear previous errors
         setIsLoading(true); // Optional: set loading state
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch('https://bitvest-server-dmlk.onrender.com/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

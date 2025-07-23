@@ -1,18 +1,25 @@
 // src/components/VerifyOTP.js
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Loader from './loader';
 
 const VerifyOTP = () => {
     const [otp, setOtp] = useState('');
+    const [isLoading, setIsLoading] = useState(false); //for loading state
     const location = useLocation();
     const navigate = useNavigate();
     const email = location.state?.email; // Get email from signup redirection
 
+    if (isLoading) {
+        return <Loader/>;
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+         setIsLoading(true); // Optional: set loading state
+        
         try {
-            const response = await fetch('http://localhost:5000/api/auth/verify', {
+            const response = await fetch('https://bitvest-server-dmlk.onrender.com/api/auth/verify', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,6 +40,8 @@ const VerifyOTP = () => {
         } catch (error) {
             console.error('OTP Verification Failed:', error);
             // Handle error, display message to user
+        }finally {
+            setIsLoading(false); // Reset loading state
         }
     };
 

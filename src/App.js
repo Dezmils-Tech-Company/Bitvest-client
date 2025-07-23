@@ -12,9 +12,9 @@ import ReferralHub from './components/ReferralHub';
 import VerifyOTP from './components/VerifyOTP';
 import Withdraw from './pages/withdraw.jsx';
 import Wallet from './pages/wallet.jsx';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import {  Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
-import { ModalProvider, useModal} from './contexts/ModalContext'; // Import ModalProvider and useModal
+import { ModalProvider} from './contexts/ModalContext'; // Import ModalProvider and useModal
 import Modal from './components/Modal'; // Import the Modal component
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
       setLoading(true); // Start loading here.
       if (token) {
         try {
-          const response = await fetch('http://localhost:5000/api/auth/validate-token',{
+          const response = await fetch('https://bitvest-server-dmlk.onrender.com/api/auth/validate-token',{
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
           });

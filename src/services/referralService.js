@@ -1,6 +1,6 @@
 
 
-const API_URL = 'http://localhost:5000/api/referral';
+const API_URL = 'https://bitvest-server-dmlk.onrender.com/api/referral';
 
 const getToken = () => localStorage.getItem('token');
 

@@ -10,7 +10,7 @@ const ReferralHub = () => {
         const fetchProfile = async () => {
           const token = localStorage.getItem('token'); // get JWT from storage
     
-          const res = await fetch('http://localhost:5000/api/user/profile', {
+          const res = await fetch('https://bitvest-server-dmlk.onrender.com/api/user/profile', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,

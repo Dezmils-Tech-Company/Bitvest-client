@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { FiEdit} from 'react-icons/fi';
 import '../styling/Dashboard.css';
 import InvestmentChart from '../components/investmentChart';
+import { useModal } from '../contexts/ModalContext';
+import Deposit from '../components/deposit.jsx';
 import Loader from '../components/loader';
 import '../components/styless/InvestmentChart.css'; 
 import { FaAmazonPay, FaBitcoin,FaChartLine,FaCoins,FaDollarSign,FaEnvelope,FaFileSignature,FaGift,FaMoneyBillWave,FaSearch, FaUserPlus, FaUsers, FaWallet } from 'react-icons/fa';
@@ -20,12 +22,13 @@ export default function Dashboard() {
       // ... more data points
     ];
     const [profile, setProfile] = useState(null);
+    const {openModal} = useModal();
 
   useEffect(() => {
     const fetchProfile = async () => {
       const token = localStorage.getItem('token'); // get JWT from storage
 
-      const res = await fetch('http://localhost:5000/api/user/profile', {
+      const res = await fetch('https://bitvest-server-dmlk.onrender.com/api/user/profile', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -115,7 +118,7 @@ export default function Dashboard() {
 
     <h3> <MdFlashOn/> Quick Actions</h3>
         <div className="Quick-actions">     
-        <div className="action-card">
+        <div onClick={()=>openModal(<Deposit />)}className="action-card">
           <FaCoins className="icon" />
           <div className="stat-title">Deposit</div>
         </div>
